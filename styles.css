@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Para esconder partes da imagem que estão fora do container */
+}
+
+.carta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9); /* Aumentando a opacidade */
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 30px;
+  font-size: 50px;
+  cursor: pointer;
+  z-index: 2;
+  text-align: center; /* Para centralizar o texto horizontalmente */
+}
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para cobrir toda a área do contêiner */
+  opacity: 0.7; /* Ajustando a opacidade */
+  z-index: -1; /* Para enviar a imagem para trás dos outros elementos */
+}
+
+.coracoes {
+  position: absolute;
+  top: 50%;
+  width: calc(100% - 40px); /* Largura total menos o espaçamento desejado */
+  padding: 0 20px; /* Espaçamento igual à metade do valor desejado */
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.coracao {
+  color: rgb(4, 0, 255);
+  font-size: 400px;
+  animation: aparecer 2s forwards;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.coracao:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.coracao:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.coracao:nth-child(4) {
+  animation-delay: 1.5s;
+}
